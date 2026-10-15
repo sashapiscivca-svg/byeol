@@ -140,6 +140,14 @@ There is **no trained model** to download: byeol is the algorithm. The Hugging F
 
 A deterministic, seeded benchmark: 7 flight scenarios × 3 seeds × 40 s. Each sequence holds raw IMU (200 Hz), flight-controller velocity (10 Hz) and heading (5 Hz), height (10 Hz), gimbal angle per frame, frame timestamps (30 fps), and ground truth. The ground truth covers position, velocity, attitude quaternion, true height, true gyro bias, and the true pixel shift for stride 1 and 5. The dataset is regenerated bit-exactly by `scripts/make_dataset.py`. Dataset card: [data/byeol-synth-v1/README.md](data/byeol-synth-v1/README.md).
 
+The same files are published on the Hugging Face Hub as [alexshynkarenk0/byeol-synth-v1](https://huggingface.co/datasets/alexshynkarenk0/byeol-synth-v1) (MIT, 15 MB, tag `v1`); the model card and camera profiles are at [alexshynkarenk0/byeol](https://huggingface.co/alexshynkarenk0/byeol) (no weights: byeol is an algorithm).
+
+```python
+from huggingface_hub import snapshot_download
+path = snapshot_download("alexshynkarenk0/byeol-synth-v1", repo_type="dataset", revision="v1")
+# python scripts/eval_dataset.py --data <path>
+```
+
 ## Limitations
 
 Read these before relying on byeol. The full list is in [MODEL_CARD.md](MODEL_CARD.md) and the technical report.

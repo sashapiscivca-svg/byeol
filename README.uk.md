@@ -145,6 +145,14 @@ docs/               технічний звіт, посібник з інтег�
 
 `scripts/make_dataset.py` перегенеровує датасет біт-у-біт. Картка датасету: [data/byeol-synth-v1/README.md](data/byeol-synth-v1/README.md).
 
+Ті самі файли опубліковано на Hugging Face Hub: [alexshynkarenk0/byeol-synth-v1](https://huggingface.co/datasets/alexshynkarenk0/byeol-synth-v1) (MIT, 15 МБ, тег `v1`). Картка моделі та профілі камер — у [alexshynkarenk0/byeol](https://huggingface.co/alexshynkarenk0/byeol) (ваг немає: byeol — це алгоритм).
+
+```python
+from huggingface_hub import snapshot_download
+path = snapshot_download("alexshynkarenk0/byeol-synth-v1", repo_type="dataset", revision="v1")
+# python scripts/eval_dataset.py --data <path>
+```
+
 ## Обмеження
 
 Прочитайте це, перш ніж покладатися на byeol. Повний перелік — у [MODEL_CARD.uk.md](MODEL_CARD.uk.md) і технічному звіті.
