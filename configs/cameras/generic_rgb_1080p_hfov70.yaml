@@ -1,0 +1,10 @@
+# Parametric template: numbers are illustrative and are NOT the specifications of any specific manufacturer or model.
+# Replace with values from calibration (scripts/calibrate_camera.py).
+schema: 1
+name: generic_rgb_1080p_hfov70
+kind: rgb
+notes: "Full 1920x1080 frame. For a downscaled frame use CameraModel.resized() rather than adjusting f by hand."
+source: "byeol generic template"
+license: "MIT"
+resolution: {width: 1920, height: 1080}
+intrinsics: {mode: fov, hfov_deg: 70.0}

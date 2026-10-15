@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "byeol"
+version = "0.1.0"
+description = "Physics-based drone camera ego-motion (pixel shift + covariance) from IMU, flight-controller velocity, height and gimbal angle. Pure numpy, no training."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "The byeol Authors" }]
+keywords = ["drone", "uav", "imu", "ego-motion", "search-and-rescue", "sar", "camera", "kalman", "mahony"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "Intended Audience :: Developers",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Image Processing",
+  "Topic :: Scientific/Engineering :: Physics",
+]
+dependencies = ["numpy>=1.24"]
+
+[project.optional-dependencies]
+yaml = ["pyyaml>=6"]
+eval = ["opencv-python-headless>=4.8", "scipy>=1.10", "pyyaml>=6"]
+dev = ["pytest>=7", "ruff>=0.4", "opencv-python-headless>=4.8", "scipy>=1.10", "pyyaml>=6"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 110
+
+[tool.ruff.lint.per-file-ignores]
+"scripts/eval_ego.py" = ["C408"]  # the scenario table reads better with dict(...)
+"scripts/make_dataset.py" = ["C408"]

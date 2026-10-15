@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -e ".[dev]"
+      - run: ruff check .
+      - run: python -m pytest tests -q
+      # bit-exact reproduction is guaranteed on the reference platform only; other numpy/BLAS builds may differ in the last bits
+      - run: python scripts/make_dataset.py --check
+        continue-on-error: true

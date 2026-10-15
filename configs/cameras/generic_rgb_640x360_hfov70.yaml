@@ -1,0 +1,11 @@
+# Parametric template: numbers are illustrative and are NOT the specifications of any specific manufacturer or model.
+# Replace with values from calibration (scripts/calibrate_camera.py).
+schema: 1
+name: generic_rgb_640x360_hfov70
+kind: rgb
+notes: "byeol evaluation camera (E-001): HFOV 70 degrees, square pixels. f ≈ 457 px."
+source: "byeol generic template"
+license: "MIT"
+resolution: {width: 640, height: 360}
+intrinsics: {mode: fov, hfov_deg: 70.0}
+distortion: {k1: 0.0, k2: 0.0, p1: 0.0, p2: 0.0, k3: 0.0}

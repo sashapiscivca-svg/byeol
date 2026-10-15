@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use byeol or the byeol-synth-v1 dataset, please cite it as below."
+title: "byeol: physics-based camera ego-motion for search-and-rescue drones"
+type: software
+authors:
+  - name: "The byeol Authors"
+version: 0.1.0
+date-released: 2026-10-15
+license: MIT
+keywords: [drone, UAV, IMU, ego-motion, search and rescue, uncertainty]
+abstract: >-
+  byeol estimates the apparent pixel shift (dx, dy) of image content between two video frames of a
+  drone camera, with a 2x2 covariance, from IMU, flight-controller velocity, height and gimbal angle.
+  Deterministic physics in pure numpy, no learned components; designed for low-cost on-board hardware.
+repository-code: "https://github.com/sashapiscivca-svg/byeol"

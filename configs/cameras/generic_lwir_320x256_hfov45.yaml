@@ -1,0 +1,10 @@
+# Parametric template: numbers are illustrative and are NOT the specifications of any specific manufacturer or model.
+# Replace with values from calibration (scripts/calibrate_camera.py).
+schema: 1
+name: generic_lwir_320x256_hfov45
+kind: lwir
+notes: "Thermal camera 320x256 (example size). vfov is set explicitly to illustrate non-square frame geometry."
+source: "byeol generic template"
+license: "MIT"
+resolution: {width: 320, height: 256}
+intrinsics: {mode: fov, hfov_deg: 45.0, vfov_deg: 36.0}

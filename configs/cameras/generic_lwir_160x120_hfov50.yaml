@@ -1,0 +1,10 @@
+# Parametric template: numbers are illustrative and are NOT the specifications of any specific manufacturer or model.
+# Replace with values from calibration (scripts/calibrate_camera.py).
+schema: 1
+name: generic_lwir_160x120_hfov50
+kind: lwir
+notes: "Low-resolution thermal camera (160x120 is only an example size). One pixel spans a large angle, so pixel shifts are small: accuracy in pixels is not accuracy in meters."
+source: "byeol generic template"
+license: "MIT"
+resolution: {width: 160, height: 120}
+intrinsics: {mode: fov, hfov_deg: 50.0}

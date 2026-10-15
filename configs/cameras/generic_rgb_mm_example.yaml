@@ -1,0 +1,10 @@
+# Parametric template: numbers are illustrative and are NOT the specifications of any specific manufacturer or model.
+# Replace with values from calibration (scripts/calibrate_camera.py).
+schema: 1
+name: generic_rgb_mm_example
+kind: rgb
+notes: "mm mode: focal length and sensor size in millimeters (example: 4.5 mm, 6.4x3.6 mm sensor => f = 900 px at 1280 px width)."
+source: "byeol generic template"
+license: "MIT"
+resolution: {width: 1280, height: 720}
+intrinsics: {mode: mm, focal_mm: 4.5, sensor_w_mm: 6.4, sensor_h_mm: 3.6}

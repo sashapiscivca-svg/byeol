@@ -1,0 +1,11 @@
+# Parametric template: numbers are illustrative and are NOT the specifications of any specific manufacturer or model.
+# Replace with values from calibration (scripts/calibrate_camera.py).
+schema: 1
+name: generic_rgb_720p_wide_hfov90
+kind: rgb
+notes: "Wide-angle variant with moderate barrel distortion (example coefficients)."
+source: "byeol generic template"
+license: "MIT"
+resolution: {width: 1280, height: 720}
+intrinsics: {mode: fov, hfov_deg: 90.0}
+distortion: {k1: -0.12, k2: 0.02, p1: 0.0, p2: 0.0, k3: 0.0}
