@@ -7,6 +7,10 @@
 ![Dependencies: numpy](https://img.shields.io/badge/core%20deps-numpy-informational.svg)
 ![Status: research preview](https://img.shields.io/badge/status-research%20preview-orange.svg)
 
+![byeol estimate vs ground truth, and error vs water texture](docs/assets/byeol-overview.png)
+
+*Left: the frame-to-frame image shift that byeol predicts from IMU, velocity and height (orange, with its ±2σ band) follows the ground truth (black) through gusts. Right: as the water surface loses texture, the image-based estimate (phase correlation) degrades by orders of magnitude while the physics estimate does not change. Synthetic data only.*
+
 > **Responsible use.** byeol is built to help find people in danger — after floods, at sea, in forests, in disaster zones. Please read [ETHICS.md](ETHICS.md) before using it. It states what we built this for and what we ask you not to use it for.
 
 **byeol** (별, Korean for *star*) estimates how the image of a drone camera moves between two video frames — the apparent pixel shift `(dx, dy)` with a 2×2 covariance — **from the drone's own sensors**: the IMU, the velocity estimate of the flight controller, the height above the surface and the gimbal angle.
