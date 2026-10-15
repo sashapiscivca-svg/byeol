@@ -36,6 +36,7 @@ The core (`src/byeol`) depends only on numpy. OpenCV and SciPy are needed only f
 | `bench_budget.py` | E-003: CPU time and memory on the current machine | E-003: час CPU і пам'ять на поточній машині |
 | `calibrate_camera.py` | Chessboard calibration CLI → YAML/JSON camera profile | CLI калібрування шахівницею → профіль камери YAML/JSON |
 | `make_dataset.py` | Builds / verifies the byeol-synth-v1 dataset | Створює / перевіряє датасет byeol-synth-v1 |
+| `make_readme_figure.py` | Draws the README figure (estimate vs ground truth, error vs water texture) from the public data | Малює рисунок для README (оцінка проти істини, похибка залежно від текстури води) з публічних даних |
 | `eval_dataset.py` | Runs the estimator on dataset files; reference log-replay loop | Проганяє оцінювач на файлах датасету; еталонний цикл програвання логів |
 | `stage_hf.py` | Prepares Hugging Face upload folders (model card and dataset) | Готує теки для завантаження на Hugging Face (картка моделі й датасет) |
 
