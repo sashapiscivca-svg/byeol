@@ -14,9 +14,9 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
-from eval_dataset import run_sequence  # noqa: E402
+from eval_dataset import run_sequence
 
-from byeol.cameramodel import CameraModel  # noqa: E402
+from byeol.cameramodel import CameraModel
 
 
 def main() -> None:
@@ -28,7 +28,7 @@ def main() -> None:
     c = res["camera"]
     cam = CameraModel(c["width"], c["height"], c["fx"], c["fy"], c["cx"], c["cy"])
     seq = dict(np.load(ROOT / "data" / "byeol-synth-v1" / "gust_s100.npz"))
-    t, dx, dy, gx, gy, sg, val = np.asarray(run_sequence(seq, cam, (5,))[5], dtype=float).T
+    t, dx, _dy, gx, _gy, sg, val = np.asarray(run_sequence(seq, cam, (5,))[5], dtype=float).T
     m = (t >= 12) & (t <= 32) & (val > 0)
 
     plt.rcParams.update({"font.size": 11, "axes.spines.top": False, "axes.spines.right": False})
